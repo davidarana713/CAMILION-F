@@ -1,0 +1,171 @@
+header{
+  margin:0;
+  border:0;
+}
+.header-top {
+   display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 30px;
+  background: url('/assets/images/Fondo-header.png') center / cover no-repeat;
+  height: 80px;
+  width:auto;
+}
+
+.header-left {
+  flex: 1;
+}
+
+
+.header-logo img {
+  height: 70px;
+}
+
+.header-icons {
+    display: flex;
+  align-items: center;
+  gap: 25px;
+}
+
+.icon {
+  text-decoration: none;
+  color: white;
+  font-size: 12px;
+  text-align: center;
+}
+
+.icon img {
+  width: 80px; /* tamaño correcto */
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+/* NAV BAR */
+.nav-bar {
+  background: rgba(80, 80, 80, 0.9);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  padding: 10px 10px;
+  width: 100;
+}
+
+/* NAV */
+.nav a {
+  color: white;
+  text-decoration: none;
+  margin: 0 6px;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+.nav span {
+  color: #ccc;
+}
+
+/* BUSCADOR INLINE */
+.search-inline {
+  display: flex;
+  align-items: center;
+}
+
+.search-inline input {
+  width: 160px;
+  padding: 6px 8px;
+  border: none;
+  outline: none;
+  background: #222;
+  color: white;
+  font-size: 13px;
+}
+
+.search-inline button {
+  padding: 6px 10px;
+  border: none;
+  background: #555;
+  cursor: pointer;
+  color: white;
+}
+
+.search-inline button:hover {
+  background: #777;
+}
+
+/* CONTENEDOR */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+/* BOTÓN */
+.dropbtn {
+  background: none;
+  border: none;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  font-size: 14px;
+  letter-spacing: 1px;
+}
+
+/* MENÚ */
+.dropdown-content {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  min-width: 20px;
+
+  background: linear-gradient(180deg, #1e1e1e, #2b2b2b);
+  border: 1px solid #444;
+  border-radius: 6px;
+
+  box-shadow: 0 8px 20px rgba(0,0,0,0.6);
+
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(10px);
+  transition: all 0.3s ease;
+
+  z-index: 999;
+}
+
+/* LINKS */
+.dropdown-content a {
+  display: block;
+  padding: 12px 16px;
+  color: #ddd;
+  text-decoration: none;
+  font-size: 14px;
+  transition: all 0.2s ease;
+}
+
+/* EFECTO HOVER EN CADA OPCIÓN */
+.dropdown-content a:hover {
+  background: #ff8800;
+  color: black;
+  padding-left: 22px;
+}
+
+/* MOSTRAR MENU */
+.dropdown:hover .dropdown-content {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+  .nav-bar {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .search-inline input {
+    width: 220px;
+  }
+}
+
+
+

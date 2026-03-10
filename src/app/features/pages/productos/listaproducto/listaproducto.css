@@ -1,0 +1,132 @@
+/* Layout general */
+.layout {
+  display: flex;
+  min-height: 100vh;
+  background: linear-gradient(rgba(0,0,0,0.85), rgba(0,0,0,0.85)),
+              url('/assets/bg.jpg') center/cover no-repeat;
+  color: #fff;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+
+/* Main */
+.main {
+  flex: 1;
+  padding: 40px;
+}
+
+/* Header */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 25px;
+}
+
+.header h1 {
+  font-size: 32px;
+  font-weight: 600;
+}
+
+.btn-add {
+  background: #f5b400;
+  border: none;
+  padding: 10px 18px;
+  font-weight: 600;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: 0.3s;
+
+  color: #ffffff;          /* Texto blanco */
+  text-decoration: none;   /* Quitar subrayado */
+  display: inline-block;
+}
+
+.btn-add:hover {
+  background: #ffcc33;
+}
+
+/* Tabla */
+.table-container {
+  background: rgba(20, 20, 20, 0.85);
+  backdrop-filter: blur(8px);
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.6);
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+thead {
+  background: rgba(255,255,255,0.05);
+}
+
+th {
+  padding: 15px;
+  text-align: left;
+  font-size: 13px;
+  letter-spacing: 1px;
+  color: #aaa;
+}
+
+td {
+  padding: 15px;
+  border-top: 1px solid rgba(255,255,255,0.05);
+  font-size: 14px;
+}
+
+tbody tr:hover {
+  background: rgba(255,255,255,0.05);
+}
+
+/* Nombre con subtítulo */
+.nombre {
+  font-weight: 600;
+}
+
+.nombre .sub {
+  display: block;
+  font-size: 12px;
+  color: #888;
+  margin-top: 4px;
+}
+
+/* Botones */
+.acciones button {
+  margin-right: 8px;
+  padding: 6px 12px;
+  border: none;
+  font-size: 12px;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.btn-edit {
+  background: #333;
+  color: #fff;
+}
+
+.btn-edit:hover {
+  background: #444;
+}
+
+.btn-delete {
+  background: #8b1e1e;
+  color: #fff;
+}
+
+.btn-delete:hover {
+  background: #b22222;
+}
+
+/* Footer tabla */
+.footer-table {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 15px;
+  font-size: 13px;
+  color: #aaa;
+}

@@ -1,0 +1,198 @@
+/* LAYOUT GENERAL */
+.layout {
+  display: flex;
+  min-height: 100vh;
+}
+
+/* SIDEBAR */
+.sidebar {
+  width: 260px;
+  background: #000;
+  color: white;
+  padding: 40px 30px;
+}
+
+/* ESTILO DEL LINK */
+.sidebar a {
+  display: block;
+  color: white;          /* Texto blanco */
+  text-decoration: none; /* Quitar subrayado */
+  margin-bottom: 25px;
+  letter-spacing: 1px;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+/* Hover */
+.sidebar a:hover {
+  color: #f5b000;
+}
+
+/* CONTENIDO DERECHO */
+.main {
+  flex: 1;
+  background: url('/assets/images/Fondo-header.png') center / cover no-repeat;
+  display: flex;
+  justify-content: center;
+  padding: 60px 0;
+}
+
+/* CAJA DEL FORMULARIO */
+.form-box {
+  width: 700px;
+  background: rgba(25,25,25,0.85);
+  padding: 40px;
+  border-radius: 8px;
+  color: white;
+  backdrop-filter: blur(6px);
+}
+
+/* TITULO */
+.form-box h1 {
+  text-align: center;
+  font-size: 42px;
+  margin-bottom: 30px;
+  letter-spacing: 2px;
+}
+
+/* TABS */
+.tabs {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 30px;
+  gap: 10px;
+}
+
+.tab {
+  padding: 10px 25px;
+  background: #333;
+  border: none;
+  color: white;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.tab.active {
+  background: #f5b000;
+  color: black;
+  font-weight: bold;
+}
+
+.tab:hover {
+  background: #555;
+}
+
+/* FORM */
+.form input,
+.form select {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 15px;
+  background: #2a2a2a;
+  border: 1px solid #555;
+  color: white;
+  outline: none;
+}
+
+/* FILA DOBLE */
+.row {
+  display: flex;
+  gap: 10px;
+}
+
+/* SUBIR IMAGEN */
+.upload {
+  border: 1px solid #777;
+  padding: 20px;
+  margin: 20px 0;
+  background: #2a2a2a;
+  cursor: pointer;
+}
+
+/* BOTON */
+.btn-create {
+  width: 100%;
+  padding: 15px;
+  border: none;
+  background: linear-gradient(to right, #ffae00, #ff7b00);
+  font-weight: bold;
+  cursor: pointer;
+  font-size: 16px;
+  transition: 0.3s;
+}
+
+.btn-create:hover {
+  opacity: 0.85;
+}
+/* CONTENEDOR TALLAS Y STOCK */
+.sizes-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 20px 0;
+  flex-wrap: wrap;
+}
+
+/* TALLAS */
+.sizes label {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 14px;
+}
+
+.size-options {
+  display: flex;
+  gap: 8px;
+}
+
+.size-options span {
+  border: 1px solid #777;
+  padding: 6px 12px;
+  background: #333;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.size-options span:hover {
+  background: #f5b000;
+  color: black;
+}
+
+/* STOCK */
+.stock {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.stock label {
+  font-size: 14px;
+}
+
+.stock input {
+  width: 70px;
+  padding: 8px;
+  background: #2a2a2a;
+  border: 1px solid #555;
+  color: white;
+}
+/* PRECIO */
+.price-container {
+  margin-bottom: 15px;
+}
+
+.price-container label {
+  display: block;
+  margin-bottom: 6px;
+  font-size: 14px;
+}
+
+.price-container input {
+  width: 100%;
+  padding: 12px;
+  background: #2a2a2a;
+  border: 1px solid #555;
+  color: white;
+  outline: none;
+}
+

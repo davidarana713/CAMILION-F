@@ -1,0 +1,47 @@
+<div class="layout">
+
+  <!-- SIDEBAR -->
+  <nav class="sidebar">
+    <a routerLink="/listaoferta">LISTA OFERTAS</a>
+  </nav>
+
+  <!-- CONTENIDO -->
+  <div class="main">
+
+    <div class="form-box">
+
+      <h1>FORMULARIO<br>PARA CREAR OFERTA</h1>
+
+      <form class="form" >
+
+        <!-- NOMBRE -->
+        <input type="text" placeholder="ID del producto" formControlName="nombre">
+
+        <!-- ESTADO -->
+        <div class="status-container">
+          <label>Descuento</label>
+          <select formControlName="activa">
+            <option>10%</option>
+            <option>20%</option>
+            <option>30%</option>
+            <option>40%</option>
+            <option>50%</option>
+            <option>60%</option>
+            <option>70%</option>
+            <option>80%</option>
+            <option>90%</option>
+          </select>
+        </div>
+
+        <!-- BOTÓN -->
+        <button type="submit" class="btn-create">
+          CREAR CATEGORÍA
+        </button>
+
+      </form>
+
+    </div>
+
+  </div>
+
+</div>

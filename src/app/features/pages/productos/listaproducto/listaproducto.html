@@ -1,0 +1,58 @@
+<pre class="code">
+  {{ productos | async | json }}
+</pre>
+
+<div class="layout">
+
+  <!-- CONTENIDO PRINCIPAL -->
+  <div class="main">
+
+    <div class="header">
+      <h1>LISTA DE PRODUCTOS</h1>
+       <a class="btn-add" routerLink="/craproducto"> AGREGA PRODUCTOS</a>
+      </div>
+
+      <div class="table-container">
+
+      <table>
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>NOMBRE</th>
+            <th>DESCRIPCIÓN</th>
+            <th>PRECIO</th>
+            <th>CATEGORÍA</th>
+            <th>TALLA</th>
+            <th>STOCK</th>
+            <th>ACCIONES</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          @for( producto of ( productos | async); track $index  ) {
+             <tr>
+            <td>{{ producto._id }}</td>
+            <td>{{ producto.nombre }}</td>
+            <td>{{ producto.descripcion}}</td>
+            <td>{{ producto.precio | currency }}</td>
+            <td>{{ producto.categoria.nombre }}</td>
+            <td>{{ producto.talla}}</td>
+            <td>{{ producto.stock }}</td>
+            <td>
+              <button>Editar</button>
+              <button>Eliminar</button>
+            </td>
+          </tr>
+          }
+
+        </tbody>
+      </table>
+
+      <div class="footer-table">
+        <span>Mostrando productos</span>
+        <span>Página 1 de 1</span>
+      </div>
+
+    </div>
+  </div>
+</div>

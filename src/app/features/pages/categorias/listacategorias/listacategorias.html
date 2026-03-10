@@ -1,0 +1,50 @@
+<div class="layout">
+
+  <!-- CONTENIDO PRINCIPAL -->
+  <div class="main">
+
+    <div class="header">
+      <h1>LISTA DE CATEGORIAS</h1>
+       <a class="btn-add" routerLink="/creacategoria"> AGREGA CATEGORIA</a>
+      </div>
+
+      <div class="table-container">
+
+      <table>
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>NOMBRE</th>
+            <th>DESCRIPCIÓN</th>
+            <th>ACTIVA</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <!-- <tr *ngFor="let producto of productos; let i = index">
+            <td>{{ i + 1 }}</td>
+            <td class="nombre">
+              {{ producto.nombre }}
+              <span class="sub">ID: {{ producto.id }}</span>
+            </td>
+            <td>{{ producto.descripcion }}</td>
+            <td>$ {{ producto.precio }}</td>
+            <td>{{ producto.categoria }}</td>
+            <td>{{ producto.talla }}</td>
+            <td>{{ producto.stock }}</td>
+            <td class="acciones">
+              <button class="btn-edit">Editar</button>
+              <button class="btn-delete">Eliminar</button>
+            </td>
+          </tr> -->
+        </tbody>
+      </table>
+
+      <div class="footer-table">
+        <span>Mostrando productos</span>
+        <span>Página 1 de 1</span>
+      </div>
+
+    </div>
+  </div>
+</div>

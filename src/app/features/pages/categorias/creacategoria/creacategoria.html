@@ -1,0 +1,44 @@
+<div class="layout">
+
+  <!-- SIDEBAR -->
+  <nav class="sidebar">
+    <a routerLink="/listaproducto">LISTA CATEGORIA</a>
+  </nav>
+
+  <!-- CONTENIDO -->
+  <div class="main">
+
+    <div class="form-box">
+
+      <h1>FORMULARIO<br>PARA CREAR CATEGORÍA</h1>
+
+      <form class="form" [formGroup]="formData" (ngSubmit)="onSubmit()" >
+
+        <!-- NOMBRE -->
+        <input type="text" placeholder="Nombre de la categoría" formControlName="nombre">
+
+        <!-- DESCRIPCIÓN -->
+        <textarea formControlName="descripcion" placeholder="Descripción de la categoría"></textarea>
+
+        <!-- ESTADO -->
+        <div class="status-container">
+          <label>Estado</label>
+          <select formControlName="activa">
+            <option value="true">Activa</option>
+            <option value="false">Inactiva</option>
+          </select>
+        </div>
+
+        <!-- BOTÓN -->
+        <button type="submit" class="btn-create">
+          CREAR CATEGORÍA
+        </button>
+
+      </form>
+
+    </div>
+
+  </div>
+
+</div>
+
