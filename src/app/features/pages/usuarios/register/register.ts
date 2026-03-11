@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
-import { HttpRegister } from '../../../core/services/http-register';
+import { HttpRegister } from '../../../../core/services/http-register';
 import { Router } from '@angular/router';
 
 @Component({

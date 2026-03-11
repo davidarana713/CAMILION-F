@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
-import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
-import { RouterLink } from '@angular/router';
+import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
+import {  Router, RouterLink } from '@angular/router';
+import { HttpCategory } from '../../../../core/services/http-category';
+
 
 @Component({
   selector: 'app-creacategoria',
@@ -11,16 +13,36 @@ import { RouterLink } from '@angular/router';
 export class Creacategoria {
   formData!: FormGroup;
 
-  constructor() {
+  constructor(
+    private httpCategoria:HttpCategory,
+    private router: Router
+  ) {
     this.formData = new FormGroup({
-      nombre: new FormControl(''),
-      descripcion: new FormControl(''),
+      nombre: new FormControl('',[ Validators.required ]),
+      descripcion: new FormControl('',[ Validators.required ]),
       activa: new FormControl(true)
     })
   }
 
   // Obtener los datos del formulario (boton se presione)
   onSubmit() {
-    console.log(this.formData.value)
+    if (this.formData.valid){
+      console.log(this.formData.value)
+      this.httpCategoria.creaCategoria(this.formData.value).subscribe({
+        next:(data:any)=>{
+          console.log(data);
+          this.router.navigateByUrl('listacategoria')
+        },
+        error:(error: any ) =>{
+          console.error(error);
+        },
+        complete:() => {
+
+        }
+      })
+    }
+    else{
+      console.log('Formulario no valido')
+    }
   }
 }

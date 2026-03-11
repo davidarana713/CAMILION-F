@@ -2,7 +2,7 @@ import { Routes } from '@angular/router';
 
 import { Home } from './features/pages/home/home';
 import { Login } from './features/pages/login/login';
-import { Register } from './features/pages/register/register';
+import { Register } from './features/pages/usuarios/register/register';
 import { Ofertas } from './features/pages/oferta/ofertas/ofertas';
 import { Creaoferta } from './features/pages/oferta/creaoferta/creaoferta';
 import { Listaoferta } from './features/pages/oferta/listaoferta/listaoferta';

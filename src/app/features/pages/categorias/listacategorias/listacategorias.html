@@ -17,26 +17,23 @@
             <th>NOMBRE</th>
             <th>DESCRIPCIÓN</th>
             <th>ACTIVA</th>
+            <th>ACCIONES</th>
           </tr>
         </thead>
 
         <tbody>
-          <!-- <tr *ngFor="let producto of productos; let i = index">
-            <td>{{ i + 1 }}</td>
-            <td class="nombre">
-              {{ producto.nombre }}
-              <span class="sub">ID: {{ producto.id }}</span>
+          @for( categoria of ( categorias | async); track $index  ) {
+             <tr>
+            <td>{{ categoria._id }}</td>
+            <td>{{ categoria.nombre }}</td>
+            <td>{{ categoria.descripcion}}</td>
+            <td>{{ categoria.activa}}</td>
+            <td>
+              <button>Editar</button>
+              <button>Eliminar</button>
             </td>
-            <td>{{ producto.descripcion }}</td>
-            <td>$ {{ producto.precio }}</td>
-            <td>{{ producto.categoria }}</td>
-            <td>{{ producto.talla }}</td>
-            <td>{{ producto.stock }}</td>
-            <td class="acciones">
-              <button class="btn-edit">Editar</button>
-              <button class="btn-delete">Eliminar</button>
-            </td>
-          </tr> -->
+          </tr>
+          }
         </tbody>
       </table>
 
