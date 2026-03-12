@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { BehaviorSubject, Observable, Subscription, switchMap } from 'rxjs';
 import { HttpRegister } from '../../../../core/services/http-register';
 import { AsyncPipe, JsonPipe } from '@angular/common';
-import { RouterLink } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-listausuarios',
@@ -17,7 +17,10 @@ export class Listausuarios {
 
   private refreshTriggerUsuario$ = new BehaviorSubject<void>(undefined);
 
-  constructor(private httpusuario:HttpRegister){}
+  constructor(
+    private httpusuario:HttpRegister,
+    private router: Router
+  ){}
 
   ngOnInit(){
     this.usuarios = this.refreshTriggerUsuario$.pipe(switchMap(() => this.httpusuario.getUsuario()))
@@ -31,6 +34,7 @@ export class Listausuarios {
 
   onEditar(id: string) {
     console.log( 'Editar usuario por el ID ', id );
+    this.router.navigate(['/editausuario', id]);
   }
 
   onEliminar(id:string) {
