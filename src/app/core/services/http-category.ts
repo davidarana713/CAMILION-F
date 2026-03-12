@@ -8,12 +8,12 @@ import { map } from 'rxjs/operators';
 export class HttpCategory {
   constructor( private http: HttpClient ) {}
 
-  
+
   creaCategoria(nuevaCategoria: any ){
   return this.http.post('http://localhost:3000/api/v1/categoria', nuevaCategoria)
 }
-  
-  
+
+
   // Peticion para obtener todas las categorias
   getCategories() {
     return this.http.get<any>('http://localhost:3000/api/v1/categoria').pipe(
@@ -22,6 +22,10 @@ export class HttpCategory {
       } )
     );
 
+  }
+
+  deleteCategoria(id:string){
+    return this.http.delete<any>(`http://localhost:3000/api/v1/categoria/${id}`)
   }
 
 }

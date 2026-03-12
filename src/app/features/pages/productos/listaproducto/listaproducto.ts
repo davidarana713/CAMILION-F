@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { HttpProduct } from '../../../../core/services/http-product';
-import { BehaviorSubject, Observable, switchMap } from 'rxjs';
+import { BehaviorSubject, Observable, Subscription, switchMap } from 'rxjs';
 import { AsyncPipe, CurrencyPipe, JsonPipe } from '@angular/common';
 
 @Component({
@@ -11,7 +11,10 @@ import { AsyncPipe, CurrencyPipe, JsonPipe } from '@angular/common';
   styleUrl: './listaproducto.css',
 })
 export class Listaproducto {
-    // Paso 1: Define el atributo de clase publica (Datos que se van a renderizar), Observa por cambios, transfiere los datos
+
+  public estadoSubcripcionEliminar!: Subscription;
+
+  // Paso 1: Define el atributo de clase publica (Datos que se van a renderizar), Observa por cambios, transfiere los datos
     public productos: Observable<any[]> = new Observable<any[]>();
 
     // Paso 2: Trigger (Disparador), donde se guardan los datos.
@@ -23,5 +26,25 @@ export class Listaproducto {
     this.productos = this.refreshTriggerProductos$.pipe(
       switchMap( () => this.httpProduct.getProducts() )
     )
+  }
+
+  ngDestroy() {
+    if( this.estadoSubcripcionEliminar ){
+      this.estadoSubcripcionEliminar.unsubscribe();
+    }
+  }
+
+  onEliminar(id:string){
+    console.log('Eliminar usuarios por el ID',id);
+    this.estadoSubcripcionEliminar = this.httpProduct.deleteProduct(id).subscribe({
+      next:(data)=>{
+        console.log(data);
+        this.refreshTriggerProductos$.next();
+      },
+      error:(err) =>{
+        console.error(err);
+
+      }
+    });
   }
 }

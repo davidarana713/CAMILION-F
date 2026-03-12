@@ -21,4 +21,9 @@ export class HttpProduct {
       })
     )
   }
+
+  deleteProduct(id:string){
+    return this.http.delete<any>(`http://localhost:3000/api/v1/producto/${id}`)
+  }
+
 }

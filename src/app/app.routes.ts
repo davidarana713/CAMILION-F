@@ -13,6 +13,7 @@ import { Creacategoria } from './features/pages/categorias/creacategoria/creacat
 import { Listaproducto } from './features/pages/productos/listaproducto/listaproducto';
 import { Listacategorias } from './features/pages/categorias/listacategorias/listacategorias';
 import { Editacategoria } from './features/pages/categorias/editacategoria/editacategoria';
+import { Listausuarios } from './features/pages/usuarios/listausuarios/listausuarios';
 
 
 
@@ -30,6 +31,7 @@ export const routes: Routes = [
   {path:'listaproducto',component:Listaproducto},
   {path:'listacategoria',component:Listacategorias},
   {path:'editacategoria', component: Editacategoria},
+  {path:'listausuario',component:Listausuarios},
   {path:'', redirectTo: "home", pathMatch: "full"},
   {path:"**", redirectTo: "home", pathMatch: "full"},
 ];

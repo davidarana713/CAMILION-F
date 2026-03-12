@@ -1,1 +1,54 @@
-<p>listausuarios works!</p>
+<div class="layout">
+
+  <!-- CONTENIDO PRINCIPAL -->
+  <div class="main">
+
+    <div class="header">
+      <h1>LISTA DE PERFILES</h1>
+       <a class="btn-add" routerLink="/register"> AGREGA USUARIO</a>
+      </div>
+
+      <div class="table-container">
+
+      <table>
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>NOMBRE</th>
+            <th>CORREO</th>
+            <th>TELEFONO</th>
+            <th>EDAD</th>
+            <th>PIN</th>
+            <th>ROL</th>
+            <th>ACCIONES</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          @for( usuario of ( usuarios | async); track $index  ) {
+             <tr>
+            <td>{{ usuario._id }}</td>
+            <td>{{ usuario.nombre }}</td>
+            <td>{{ usuario.correo}}</td>
+            <td>{{ usuario.telefono }}</td>
+            <td>{{ usuario.edad }}</td>
+            <td>{{ usuario.pin}}</td>
+            <td>{{ usuario.rol }}</td>
+            <td>
+              <button (click)="onEditar( usuario._id )">Editar</button>
+              <button (click)="onEliminar( usuario._id )">Eliminar</button>
+            </td>
+          </tr>
+          }
+
+        </tbody>
+      </table>
+
+      <div class="footer-table">
+        <span>Mostrando productos</span>
+        <span>Página 1 de 1</span>
+      </div>
+
+    </div>
+  </div>
+</div>
