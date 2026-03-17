@@ -13,6 +13,7 @@ import { Creacategoria } from './features/pages/categorias/creacategoria/creacat
 import { Listaproducto } from './features/pages/productos/listaproducto/listaproducto';
 import { Listacategorias } from './features/pages/categorias/listacategorias/listacategorias';
 import { Editacategoria } from './features/pages/categorias/editacategoria/editacategoria';
+import { Carrito } from './features/pages/carrito/carrito';
 
 
 
@@ -21,6 +22,7 @@ export const routes: Routes = [
   {path:'login',component:Login},
   {path:'register',component:Register},
   {path:'ofertas',component:Ofertas},
+  {path:'carrito',component:Carrito},
   {path:'creaoferta',component:Creaoferta},
   {path:'listaoferta',component:Listaoferta},
   {path:'contacto',component:Contacto},

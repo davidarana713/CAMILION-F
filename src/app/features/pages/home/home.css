@@ -43,7 +43,12 @@
   color: white;
   max-width: 500px;
 }
-
+p{
+  font-size: 18px;
+  line-height: 1.4;
+  color: white;
+  margin: 5px 0px;
+}
 .featured-tag {
   display: inline-block;
   padding: 6px 14px;
@@ -115,7 +120,7 @@
 .products-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 40px;
+  gap: 100px;
   justify-items: center;
 }
 
@@ -134,8 +139,8 @@
 
 /* IMAGEN */
 .product-card img {
-  width: 100%;
-  max-width: 220px;
+  width: 300px;
+  height: 300px;
   margin-bottom: 15px;
   filter: drop-shadow(0 0 10px black);
 }
