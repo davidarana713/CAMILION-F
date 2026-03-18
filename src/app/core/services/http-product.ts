@@ -11,8 +11,7 @@ export class HttpProduct {
   createProduct( nuevoProducto: any ) {
     return this.http.post('http://localhost:3000/api/v1/producto', nuevoProducto)
   }
-
-  getProducts() {
+ getProducts() {
     return this.http.get<any>('http://localhost:3000/api/v1/producto').pipe(
       tap( (response) => console.log(response) ),
       map( response => {

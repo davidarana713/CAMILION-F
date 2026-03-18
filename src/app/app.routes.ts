@@ -16,6 +16,9 @@ import { Editacategoria } from './features/pages/categorias/editacategoria/edita
 import { Listausuarios } from './features/pages/usuarios/listausuarios/listausuarios';
 import { Editausuario } from './features/pages/usuarios/editausuario/editausuario';
 import { Editaproducto } from './features/pages/productos/editaproducto/editaproducto';
+import { Carrito } from './features/pages/carrito/carrito';
+
+
 
 
 
@@ -24,6 +27,7 @@ export const routes: Routes = [
   {path:'login',component:Login},
   {path:'register',component:Register},
   {path:'ofertas',component:Ofertas},
+  {path:'carrito',component:Carrito},
   {path:'creaoferta',component:Creaoferta},
   {path:'listaoferta',component:Listaoferta},
   {path:'contacto',component:Contacto},

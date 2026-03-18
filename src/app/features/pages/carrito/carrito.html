@@ -1,0 +1,85 @@
+
+<section class="cart-container">
+
+    <h1 class="cart-title">CARRITO DE COMPRAS</h1>
+
+    <div class="cart-content">
+
+        <table class="cart-table">
+
+            <thead>
+                <tr>
+                    <th>Producto</th>
+                    <th>Nombre</th>
+                    <th>Precio</th>
+                    <th>Cantidad</th>
+                    <th>Subtotal</th>
+                    <th></th>
+                </tr>
+            </thead>
+
+            <tbody>
+                @for (producto of cartItem; track $index) {
+
+
+                  <tr>
+                      <td>
+                          <img [src]="producto.product.img" class="cart-img">
+                      </td>
+
+                      <td>{{ producto.product.nombre }}</td>
+
+                      <td>{{ producto.product.precio |currency}}</td>
+
+                      <td>
+                          <div class="qty-control">
+                              <button (click)="onDecrease(producto.product)">-</button>
+                              <input type="number" [value]="producto.quantity">
+                              <button (click)="onIncrease(producto.product)">+</button>
+                          </div>
+                      </td>
+
+                      <td>{{ producto.product.precio * producto.quantity | currency }} </td>
+
+                      <td>
+                          <button class="remove-btn" (click)="onRemove(producto.product)">🗑</button>
+                      </td>
+                  </tr>
+                }
+
+            </tbody>
+
+        </table>
+
+        <!-- RESUMEN -->
+
+        <div class="cart-summary">
+
+            <h2>Resumen</h2>
+
+            <div class="summary-line">
+                <span>Subtotal</span>
+                <span>{{ onTotal() | currency }}</span>
+            </div>
+
+            <div class="summary-line">
+                <span>Envío</span>
+                <span>$10.000</span>
+            </div>
+
+            <hr>
+
+            <div class="summary-total">
+                <span>Total</span>
+                <span>{{ onTotal() | currency }}</span>
+            </div>
+
+            <button class="checkout-btn">
+                FINALIZAR COMPRA
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
