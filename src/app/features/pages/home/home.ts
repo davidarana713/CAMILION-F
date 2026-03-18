@@ -40,6 +40,6 @@ export class Home {
   }
 
   addToCart(product: DataProduct) {
-    this.cartServices.addToCart(product);
+    this.cartServices.updateToCart(product, +1);
   }
 }

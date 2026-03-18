@@ -33,16 +33,16 @@
 
                       <td>
                           <div class="qty-control">
-                              <button>-</button>
+                              <button (click)="onDecrease(producto.product)">-</button>
                               <input type="number" [value]="producto.quantity">
-                              <button>+</button>
+                              <button (click)="onIncrease(producto.product)">+</button>
                           </div>
                       </td>
 
                       <td>{{ producto.product.precio * producto.quantity | currency }} </td>
 
                       <td>
-                          <button class="remove-btn">🗑</button>
+                          <button class="remove-btn" (click)="onRemove(producto.product)">🗑</button>
                       </td>
                   </tr>
                 }
@@ -59,7 +59,7 @@
 
             <div class="summary-line">
                 <span>Subtotal</span>
-                <span>$155.000</span>
+                <span>{{ onTotal() | currency }}</span>
             </div>
 
             <div class="summary-line">
@@ -71,7 +71,7 @@
 
             <div class="summary-total">
                 <span>Total</span>
-                <span>$165.000</span>
+                <span>{{ onTotal() | currency }}</span>
             </div>
 
             <button class="checkout-btn">
