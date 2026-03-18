@@ -15,6 +15,7 @@ import { Listacategorias } from './features/pages/categorias/listacategorias/lis
 import { Editacategoria } from './features/pages/categorias/editacategoria/editacategoria';
 import { Listausuarios } from './features/pages/usuarios/listausuarios/listausuarios';
 import { Editausuario } from './features/pages/usuarios/editausuario/editausuario';
+import { Editaproducto } from './features/pages/productos/editaproducto/editaproducto';
 
 
 
@@ -31,9 +32,10 @@ export const routes: Routes = [
   {path:'creacategoria',component:Creacategoria},
   {path:'listaproducto',component:Listaproducto},
   {path:'listacategoria',component:Listacategorias},
-  {path:'editacategoria', component: Editacategoria},
+  {path:'editacategoria/:id', component: Editacategoria},
   {path:'listausuario',component:Listausuarios},
   {path:'editausuario/:id',component:Editausuario},
+  {path:'editaproducto/:id',component:Editaproducto},
   {path:'', redirectTo: "home", pathMatch: "full"},
   {path:"**", redirectTo: "home", pathMatch: "full"},
 ];

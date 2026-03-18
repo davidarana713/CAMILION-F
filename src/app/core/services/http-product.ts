@@ -22,8 +22,16 @@ export class HttpProduct {
     )
   }
 
+  getProductoPorId(id:string | null){
+    return this.http.get<any>(`http://localhost:3000/api/v1/producto/${id}`)
+  }
+
   deleteProduct(id:string){
     return this.http.delete<any>(`http://localhost:3000/api/v1/producto/${id}`)
+  }
+
+  updateProducto(id:string | null,productoActualizado:any){
+    return this.http.patch<any>(`http://localhost:3000/api/v1/producto/${id}`,productoActualizado)
   }
 
 }

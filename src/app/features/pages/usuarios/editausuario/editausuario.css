@@ -1,0 +1,56 @@
+.register-container{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height:700px;
+    background: url('/assets/images/fondologin.png')
+}
+
+.register-card{
+    width:420px;
+    background:#1f1f1f;
+    padding:40px;
+    border-radius:12px;
+    box-shadow:0 10px 30px rgba(0,0,0,0.5);
+    text-align:center;
+}
+
+.register-card h2{
+    margin-bottom:25px;
+    color: #fff;
+}
+
+.register-card form{
+    display:flex;
+    flex-direction:column;
+    gap:15px;
+}
+
+.register-card input,
+.register-card select{
+    padding:12px;
+    border-radius:6px;
+    border:1px solid #444;
+    background:#2a2a2a;
+    color:white;
+}
+
+.register-card button{
+    margin-top:10px;
+    padding:13px;
+    border:none;
+    border-radius:6px;
+    background:linear-gradient(90deg,#ff9a00,#ffd000);
+    font-weight:bold;
+    cursor:pointer;
+}
+
+.login-link{
+    margin-top:20px;
+    color: #fff;
+}
+
+.login-link a{
+    color:#ffd000;
+    text-decoration:none;
+}

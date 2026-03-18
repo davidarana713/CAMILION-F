@@ -35,7 +35,7 @@
             <td>{{ producto.talla}}</td>
             <td>{{ producto.stock }}</td>
             <td>
-              <button>Editar</button>
+              <button (click)="onEditar( producto._id )">Editar</button>
               <button (click)="onEliminar(producto._id)">Eliminar</button>
             </td>
           </tr>

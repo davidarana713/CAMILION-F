@@ -6,7 +6,7 @@ import { Router, RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-listausuarios',
-  imports: [AsyncPipe,JsonPipe,RouterLink],
+  imports: [AsyncPipe,RouterLink],
   templateUrl: './listausuarios.html',
   styleUrl: './listausuarios.css',
 })

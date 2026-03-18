@@ -1,0 +1,77 @@
+<div class="layout">
+
+  <!-- SIDEBAR -->
+  <nav class="sidebar">
+    <a routerLink="/listaproducto">LISTA PRODUCTOS</a>
+  </nav>
+
+  <!-- CONTENIDO -->
+  <div class="main">
+
+    <div class="form-box">
+
+      <h1>FORMULARIO<br>PARA EDITAR PRODUCTO</h1>
+
+
+      <form class="form" [formGroup]="formData"] (ngSubmit)="onSubmit()">
+
+  <input type="text" placeholder="Nombre" formControlName="nombre">
+
+  <input type="text" placeholder="Descripción" formControlName="descripcion">
+
+  <!-- PRECIO -->
+  <div class="price-container">
+    <label>Precio</label>
+    <input type="number" placeholder="$ 0" formControlName="precio">
+  </div>
+
+  <!-- CATEGORIA -->
+  <select formControlName="categoria">
+    <option value="">Seleccione..</option>
+    @for( category of (categories | async); track $index ) {
+      <option [value]="category._id">{{ category.nombre }}</option>
+    }
+  </select>
+
+  <!-- TALLAS Y STOCK -->
+  <div class="sizes-container">
+
+    <div class="sizes">
+      <label>Tallas disponibles</label>
+      <select formControlName="talla">
+    <option>S</option>
+    <option>M</option>
+    <option>L</option>
+    <option>XL</option>
+    <option>XXL</option>
+    <option>NO APLICA</option>
+     </select>
+    </div>
+
+    <div class="stock">
+      <label>¿cantidad en stock?</label>
+      <input type="number" formControlName="stock">
+    </div>
+  </div>
+
+  <!-- SUBIR IMAGEN -->
+  <!-- <div class="upload" formControlName="img">
+    📷 Subir imagen
+  </div> -->
+  <input type="text" placeholder="URL Imagen" formControlName="img">
+
+  <button type="submit" class="btn-create">
+    CLICK PARA EDITAR EL PRODUCTO
+  </button>
+
+</form>
+
+
+    </div>
+
+  </div>
+
+</div>
+
+
+

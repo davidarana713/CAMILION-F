@@ -24,8 +24,16 @@ export class HttpCategory {
 
   }
 
+  getCategoriaPorId(id: string | null){
+    return this.http.get<any>(`http://localhost:3000/api/v1/categoria/${id}`)
+  }
+
   deleteCategoria(id:string){
     return this.http.delete<any>(`http://localhost:3000/api/v1/categoria/${id}`)
+  }
+
+  updateCategory(id: string | null, categoriaActualizada: any ) {
+    return this.http.patch<any>(`http://localhost:3000/api/v1/categoria/${id}`, categoriaActualizada )
   }
 
 }

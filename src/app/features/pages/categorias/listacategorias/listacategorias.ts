@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { RouterLink } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
 import { BehaviorSubject, Observable, Subscription, switchMap } from 'rxjs';
 import { HttpCategory } from '../../../../core/services/http-category';
 import { AsyncPipe, JsonPipe } from '@angular/common';
@@ -18,7 +18,11 @@ export class Listacategorias {
 
   private refreshTriggerCategorias$ = new BehaviorSubject<void>(undefined);
 
- constructor(private httpCategory:HttpCategory){}
+ constructor(
+  private httpCategory:HttpCategory,
+  private router: Router
+
+ ){}
 
  ngOnInit(){
   this.categorias = this.refreshTriggerCategorias$.pipe(
@@ -30,6 +34,11 @@ export class Listacategorias {
     if( this.estadoSubcripcionEliminar ){
       this.estadoSubcripcionEliminar.unsubscribe();
     }
+  }
+
+  onEditar(id: string) {
+    console.log( 'Editar la categoria por el ID ', id );
+    this.router.navigate(['/editacategoria', id]);
   }
 
  onEliminar(id:string){

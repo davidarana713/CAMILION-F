@@ -10,28 +10,28 @@
 
     <div class="form-box">
 
-      <h1>FORMULARIO<br>PARA CREAR CATEGORÍA</h1>
+      <h1>FORMULARIO<br>PARA EDITAR CATEGORÍA</h1>
 
-      <form class="form">
+      <form class="form" [formGroup]="formData" (ngSubmit)="onSubmit()" >
 
         <!-- NOMBRE -->
-        <input type="text" placeholder="Nombre de la categoría">
+        <input type="text" placeholder="Nombre de la categoría" formControlName="nombre">
 
         <!-- DESCRIPCIÓN -->
-        <textarea placeholder="Descripción de la categoría"></textarea>
+        <textarea formControlName="descripcion" placeholder="Descripción de la categoría"></textarea>
 
         <!-- ESTADO -->
         <div class="status-container">
           <label>Estado</label>
-          <select>
-            <option>Activa</option>
-            <option>Inactiva</option>
+          <select formControlName="activa">
+            <option value="true">Activa</option>
+            <option value="false">Inactiva</option>
           </select>
         </div>
 
         <!-- BOTÓN -->
         <button type="submit" class="btn-create">
-          CREAR CATEGORÍA
+          EDITA CATEGORÍA
         </button>
 
       </form>

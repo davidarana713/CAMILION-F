@@ -19,8 +19,16 @@ export class HttpRegister {
     )
   }
 
+  getUsuarioPorId( id: string | null ) {
+    return this.http.get<any>(`http://localhost:3000/api/v1/registro/${id}`);
+  }
+
   deleteUsuario( id: string) {
     return this.http.delete<any>(`http://localhost:3000/api/v1/registro/${id}`)
+  }
+
+  updateUsuario(id: string | null,usuarioActualizado:any){
+    return this.http.patch<any>(`http://localhost:3000/api/v1/registro/${id}`,usuarioActualizado)
   }
 
 }
