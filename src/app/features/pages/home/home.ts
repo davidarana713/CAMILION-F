@@ -8,7 +8,7 @@ import { CartTs } from '../../../core/services/cart.ts';
 
 @Component({
   selector: 'app-home',
-  imports: [RouterLink, AsyncPipe, JsonPipe, CurrencyPipe],
+  imports: [ AsyncPipe, CurrencyPipe],
   templateUrl: './home.html',
   styleUrl: './home.css',
 })

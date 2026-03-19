@@ -34,12 +34,15 @@
 @for (producto of (productos | async); track $index){
 
       <div class="product-card">
-        <img [src]="producto.img" [alt]="producto.nombre" width="300px" height="300px">
-        <p> {{ producto.nombre }}</p>
+        <img [src]="producto.img" [alt]="producto.nombre" width="300px" height="300px" />
+        <p> <span class="name-product">{{ producto.nombre }}</span> [Cant: {{ producto.stock }}]</p>
         <p>{{ producto.precio |currency}}</p>
-
         <p></p>
-        <button (click)="addToCart(producto)">Agregar</button>
+        @if (producto.stock > 0) {
+          <button (click)="addToCart(producto)">Agregar</button>
+        } @else {
+          <div class="out-of-stock">AGOTADO</div>
+        }
       </div>
     }
   </div>

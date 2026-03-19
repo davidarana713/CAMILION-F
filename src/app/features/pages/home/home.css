@@ -145,6 +145,12 @@ p{
   filter: drop-shadow(0 0 10px black);
 }
 
+/* NOMBRE DEL PRODUCTO */
+.name-product {
+  font-weight: bold;
+  font-size: 28px;
+}
+
 /* INFO */
 .product-info {
   display: flex;
@@ -174,6 +180,22 @@ p{
 .product-card button:hover {
   background: black;
   color: white;
+}
+
+/* CAJA AGOTADO */
+.product-card .out-of-stock {
+  padding: 8px 18px;
+  background: #c40000;
+  color: white;
+  border: none;
+  font-weight: bold;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  font-size: 14px;
+  cursor: not-allowed;
+  border-radius: 4px;
+  display: inline-block;
+  opacity: 0.6;
 }
 
 /* OFERTAS */

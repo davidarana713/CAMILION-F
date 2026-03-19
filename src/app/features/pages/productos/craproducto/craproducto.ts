@@ -3,12 +3,12 @@ import { FormControl, FormControlName, FormGroup, ReactiveFormsModule, Validator
 import { Router, RouterLink } from '@angular/router';
 import { HttpCategory } from '../../../../core/services/http-category';
 import { BehaviorSubject, Observable, switchMap, tap } from 'rxjs';
-import { AsyncPipe, JsonPipe } from '@angular/common';
+import { AsyncPipe } from '@angular/common';
 import { HttpProduct } from '../../../../core/services/http-product';
 
 @Component({
   selector: 'app-craproducto',
-  imports: [RouterLink, ReactiveFormsModule, AsyncPipe, JsonPipe],
+  imports: [RouterLink, ReactiveFormsModule, AsyncPipe],
   templateUrl: './craproducto.html',
   styleUrl: './craproducto.css',
 })

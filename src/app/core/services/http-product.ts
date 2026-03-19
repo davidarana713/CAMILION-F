@@ -20,4 +20,16 @@ export class HttpProduct {
       })
     )
   }
+
+  updateProductStock(productId: number, quantity: number) {
+    return this.http.put(`http://localhost:3000/api/v1/producto/${productId}`, { stock: quantity })
+  }
+
+  // Nuevo método: Actualizar stock de múltiples productos
+  actualizarStockMultiple(productos: any[]) {
+    return this.http.post('http://localhost:3000/api/v1/producto/actualizar-stock-multiple', {
+      productos
+    })
+  }
 }
+

@@ -2,11 +2,11 @@ import { Component } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { HttpProduct } from '../../../../core/services/http-product';
 import { BehaviorSubject, Observable, switchMap } from 'rxjs';
-import { AsyncPipe, CurrencyPipe, JsonPipe } from '@angular/common';
+import { AsyncPipe, CurrencyPipe } from '@angular/common';
 
 @Component({
   selector: 'app-listaproducto',
-  imports: [RouterLink, AsyncPipe, JsonPipe, CurrencyPipe],
+  imports: [RouterLink, AsyncPipe, CurrencyPipe],
   templateUrl: './listaproducto.html',
   styleUrl: './listaproducto.css',
 })
