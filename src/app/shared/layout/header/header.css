@@ -42,7 +42,7 @@ header{
 
 /* NAV BAR */
 .nav-bar {
-  background: rgba(80, 80, 80, 0.9);
+  background: rgba(0, 0, 0, 0.9);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -63,6 +63,16 @@ header{
 .nav span {
   color: #ccc;
 }
+.nav{
+   display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.casah{
+  width:40px;
+  height: 40px;
+  }
 
 /* BUSCADOR INLINE */
 .search-inline {
